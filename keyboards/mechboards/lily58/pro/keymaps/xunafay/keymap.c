@@ -3,9 +3,6 @@
 
 #include QMK_KEYBOARD_H
 
-#define RP2040_BOOTLOADER_DOUBLE_TAP_RESET // Activates the double-tap behavior
-#define RP2040_BOOTLOADER_DOUBLE_TAP_RESET_TIMEOUT 200U // Timeout window in ms in which the double tap can occur.
-
 enum custom_keycodes {
     WORK_PC = SAFE_RANGE,
 };
@@ -43,7 +40,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     KC_TAB,   KC_Q,   KC_W,    KC_E,    KC_R,    KC_T,                     KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,    KC_SEMICOLON,
     KC_LCTL,  KC_A,   KC_S,    KC_D,    KC_F,    KC_G,                     KC_H,    KC_J,    KC_K,    KC_L,    KC_QUOT, KC_QUOT,
     KC_LSFT,  KC_Z,   KC_X,    KC_C,    KC_V,    KC_B, KC_HOME,  KC_END,   KC_N,    KC_M,    KC_COMM, KC_DOT,  KC_SLSH, KC_MINS,
-                             KC_LALT, KC_LGUI, KC_DELETE, KC_SPC, KC_ENT, MO(2), KC_LBRC, KC_RBRC
+                             KC_LALT, KC_LGUI, KC_BSPC, KC_SPC, KC_ENT, MO(2), KC_LBRC, KC_RBRC
     ),
 
 [2] = LAYOUT(
@@ -51,7 +48,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   _______, _______, _______, _______, _______, _______,                   WORK_PC, KC_PAGE_UP, KC_UP, KC_PAGE_DOWN, _______, KC_PIPE,
   _______, _______, _______, _______, _______, _______,                   _______, KC_LEFT, KC_DOWN,  KC_RIGHT,     _______, _______,
   _______, _______, _______, _______, _______, _______, _______, _______, _______, KC_UNDS, KC_PLUS,  KC_LCBR,      KC_RCBR, KC_EQUAL,
-                             _______, _______, MO(3), _______, _______, _______, _______, _______
+                             _______, MO(3),   KC_DELETE, _______, _______, _______, _______, _______
 ),
 
 [3] = LAYOUT(
